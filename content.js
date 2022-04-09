@@ -4,8 +4,10 @@
 var textContent;
 
 var old=0, latest=0;
+var result
 
 var num=1;
+var ans = "no hate"
  chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
       sendResponse({msg: "got it!!!"});
@@ -45,26 +47,30 @@ var num=1;
                     var inner = comments[i].getElementsByClassName("style-scope ytd-comment-renderer")[22]
                     textContent = inner.innerText
                     // console.log(textContent)
-                   var ans = sendText(textContent)
-                    if(ans=="hate and abusive")
+                    var ans = sendText(textContent)
+                    console.log(ans)
+                    if(ans==="hate and abusive")
                     {
+                       console.log("blocked comments: ",textContent)
                        inner.innerText = "this comment has been blocked!!!"
                        inner.style ="color:#CE0D00; font-weight:bold"
                     }
+                    else{
+                      console.log("unblocked comments: ",textContent)
+                    }
+                    ans = "no hate"
                 }
                 old = Math.max(old,latest)
               }
-        },3000)
+        },10000)
     }
 
 
- function sendText(textContent){
-     var result
+function sendText(textContent){
     chrome.runtime.sendMessage({textMsg: textContent}, function(response) {
         result = response.farewell;
-        console.log(result)
       });
-     return result
+      return result
 }
 
 })
