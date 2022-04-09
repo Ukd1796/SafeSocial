@@ -19,8 +19,8 @@ app = FastAPI()
 templates = Jinja2Templates(directory="templates/")
 app.mount("/static", StaticFiles(directory="./static"), name="static")
 
-load_model=keras.models.load_model("./Sentiment_Analysis.h5")
-with open('./Sentiment_Tokenizer.pickle', 'rb') as handle:
+load_model=keras.models.load_model("./Final_Sentiment_Analysis.h5")
+with open('./Final_Sentiment_Tokenizer.pickle', 'rb') as handle:
    load_tokenizer1 = pickle.load(handle)
 
 def clean_text(text):
