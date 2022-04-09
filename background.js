@@ -1,6 +1,7 @@
 console.log("background script is running!!!")
 
 
+
 chrome.action.onClicked.addListener(buttonClicked)
 
 function buttonClicked(tab){
@@ -24,14 +25,21 @@ setInterval(function(){
 },1000)
 
 var flag =0;
+var finalRes
 chrome.runtime.onMessage.addListener(
-   function(request, sender, sendResponse) {
+   async function(request, sender, sendResponse) {
       // console.log(request.textMsg)
-   var res = sendResource('http://127.0.0.1:8000/predict',request.textMsg).then((data)=>{console.log(data)
-   return data 
-  })
-  console.log("res: ",res)
-      sendResponse({farewell:res})
+      fetch('http://127.0.0.1:8000/predict', {
+        method: 'POST',
+        body:JSON.stringify(request.textMsg)
+      })
+      .then(response => response.json())
+      .then(data => {
+        // state is "fulfilled" or "rejected
+          finalRes = data
+    })
+  console.log("res: ",finalRes)
+      sendResponse({farewell:finalRes})
   }
 );
 var finalResult
@@ -42,10 +50,10 @@ function sendResource(url,data) {
   })
   .then(response => response.json())
   .then(data => {
-   return data; 
-  
+      console.log(data) // state is "fulfilled" or "rejected
+      return data
+})
 }
-)}
  
 
 
