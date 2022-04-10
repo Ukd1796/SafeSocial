@@ -67,6 +67,7 @@ async def predict(test: Request):
         comment= "no hate"
     else:
         comment= "hate and abusive"
+    print(comment)
     return comment
 
 if __name__ == '__main__':
