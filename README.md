@@ -13,11 +13,11 @@ A chrome extension used to block hateful and offensive comments on social media 
 3. Integration of FastAPI and Chrome extension was extremely tedious
 
 ### Technology Stack
--- Front end: HTML, CSS, Javascript to make pop-ups
--- Programming Languages: Python (TensorFlow and Keras)
--- Designing tools : Canva
--- Version Control : Git and GitHub
--- Backend: FastAPI and PostmanAPI for testing
+1. Front end: HTML, CSS, Javascript to make pop-ups
+2. Programming Languages: Python (TensorFlow and Keras)
+3. Designing tools : Canva
+4. Version Control : Git and GitHub
+5. Backend: FastAPI and PostmanAPI for testing
 
 ### Members:
 | Sr No. | Name               |
