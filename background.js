@@ -38,7 +38,7 @@ chrome.runtime.onMessage.addListener(
         // state is "fulfilled" or "rejected
           finalRes = data
     })
-  console.log("res: ",finalRes)
+  console.log("res: ",finalRes, request.textMsg)
       sendResponse({farewell:finalRes})
   }
 );
