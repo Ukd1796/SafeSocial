@@ -2,6 +2,10 @@
 
 A chrome extension used to block hateful and offensive comments on social media sites such as Youtube and Twitter
 
+Drive Link for Presentation : https://drive.google.com/file/d/1se_ds9w9YjB3qv9f2zJUG9qxhqpcSsxa/view
+
+Devfolio Submission Link : https://devfolio.co/projects/safesocial-3eec
+
 ## Problem Statement
 1. In today's world, we are more connected than ever. The internet is an amazing way to connect to those close to us, however, it is also used to spread hateful messages to others. 
 2. Our inspiration was taken from a surprisingly common issue among YouTubers and other people prominent on social media: That negative comments (even from anonymous strangers) hurts more than people realize. There have been cases of YouTubers developing mental illnesses like depression as a result of consistently receiving negative (and hateful) comments on the internet. 
@@ -18,6 +22,8 @@ A chrome extension used to block hateful and offensive comments on social media 
 3. Designing tools : Canva
 4. Version Control : Git and GitHub
 5. Backend: FastAPI and PostmanAPI for testing
+
+![](archi.png)
 
 ### Members:
 | Sr No. | Name               |
